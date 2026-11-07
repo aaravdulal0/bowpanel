@@ -28,9 +28,9 @@ print_banner() {
         clear 2>/dev/null || true
     fi
     echo -e "
-  ${EMERALD}${BOLD}╭──────────────────────────────────────────────────────────────╮
-  │  ${WHITE}██╗████████╗ ██████╗${EMERALD}   ${BOLD}${WHITE}JTG PANEL AUTO-UPDATE & REPAIR${EMERALD}        │
-  │  ${WHITE}██║╚══██╔══╝██╔════╝${EMERALD}   ${CYAN}Safe Self-Healing System Recovery${EMERALD}              │
+    ${EMERALD}${BOLD}╭──────────────────────────────────────────────────────────────╮
+  │  ${WHITE}██████╗  ██████╗ ██╗    ██╗${EMERALD}  ${BOLD}${WHITE}BOW PANEL AUTO-UPDATE & REPAIR${EMERALD}    │
+  │  ${WHITE}██╔══██╗██╔═══██╗██║    ██║${EMERALD}  ${CYAN}Safe Self-Healing System Recovery${EMERALD}              │
   ╰──────────────────────────────────────────────────────────────╯${NC}
 "
 }
