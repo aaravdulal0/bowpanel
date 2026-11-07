@@ -1,7 +1,7 @@
-# JTG Panel — Changelog
+# Bow Panel — Changelog
 
-## v3.0.0 Release (Master Production Update)
-- **Version Upgrade to v3.0.0**:
+## v1.0.0 Release (Master Production Update)
+- **Version Upgrade to v1.0.0**:
   - Full project upgrade across `package.json`, `update.sh`, `generate_scripts.py`, backend routes (`/api/health`, `/api/settings`, `/api/system/version`), and frontend dashboards.
 - **Docker Container Runtime & Lifecycle Hardening**:
   - Solved `ECONNREFUSED` / `EACCES` socket connection errors with active socket self-repair and permissions handling.
