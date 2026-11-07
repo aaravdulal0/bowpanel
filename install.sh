@@ -1,6 +1,6 @@
 #!/bin/bash
 # =========================================================
-# JTG Panel - Automated Installation & Management Script
+# Bow Panel - Automated Installation & Management Script
 # =========================================================
 
 # Ensure running in bash
@@ -30,7 +30,7 @@ DIM='\033[2m'
 NC='\033[0m'
 
 # Ensure initial tools exist if cloning is needed
-if [ ! -f "package.json" ] && [ ! -f "Jtg/package.json" ]; then
+if [ ! -f "package.json" ] && [ ! -f "bowpanel/package.json" ]; then
     echo -e "  \033[38;5;51m⚡ Initializing JTG Panel files...\033[0m"
     if ! command -v git > /dev/null 2>&1 || ! command -v curl > /dev/null 2>&1; then
         if command -v apt-get > /dev/null 2>&1; then
@@ -42,13 +42,13 @@ if [ ! -f "package.json" ] && [ ! -f "Jtg/package.json" ]; then
             (dnf install -y git curl tar ca-certificates > /dev/null 2>&1 || sudo dnf install -y git curl tar ca-certificates > /dev/null 2>&1 || true)
         fi
     fi
-    git clone https://github.com/JishnuTheGamer/Jtg Jtg 2>/dev/null || git clone https://github.com/JishnuTheGamer/Jtg.git Jtg 2>/dev/null || true
+    git clone https://github.com/aaravdulal0/bowpanel Bowpanel 2>/dev/null || git clone https://github.com/aaravdulal0/bowpanel.git BowPanel 2>/dev/null || true
 fi
 
 if [ -f "package.json" ]; then
     WORK_DIR="."
-elif [ -d "Jtg" ] && [ -f "Jtg/package.json" ]; then
-    WORK_DIR="Jtg"
+elif [ -d "bowpanel" ] && [ -f "bow/package.json" ]; then
+    WORK_DIR="bowpanel"
 else
     WORK_DIR="."
 fi
@@ -126,10 +126,10 @@ print_banner() {
     fi
     detect_sys_meta
     echo -e "
-  ${EMERALD}${BOLD}╭──────────────────────────────────────────────────────────────╮
-  │  ${WHITE}██╗████████╗ ██████╗${EMERALD}   ${BOLD}${WHITE}JTG CONTROL PANEL${EMERALD}                     │
-  │  ${WHITE}██║╚══██╔══╝██╔════╝${EMERALD}   ${CYAN}Next-Gen Minecraft Server Manager${EMERALD}          │
-  │  ${WHITE}██║   ██║   ██║  ███╗${EMERALD}  ${AMBER}v3.0.0${NC}${EMERALD} · ${GREEN}Production Ready${EMERALD}                      │
+${EMERALD}${BOLD}╭──────────────────────────────────────────────────────────────╮
+  │  ${WHITE}██████╗  ██████╗ ██╗    ██╗${EMERALD}  ${BOLD}${WHITE}BOW PANEL${EMERALD}                     │
+  │  ${WHITE}██╔══██╗██╔═══██╗██║    ██║${EMERALD}  ${CYAN}Next-Gen Minecraft Server Manager${EMERALD}          │
+  │  ${WHITE}██████╔╝██║   ██║██║ █╗ ██║${EMERALD}  ${AMBER}v3.0.0${NC}${EMERALD} · ${GREEN}Production Ready${EMERALD}                      │
   ├──────────────────────────────────────────────────────────────┤
   │  ${GRAY}System :${NC} ${WHITE}${OS_TYPE} (${SYS_ARCH})${EMERALD}
   │  ${GRAY}Memory :${NC} ${WHITE}${SYS_RAM}${NC}   ${GRAY}IP:${NC} ${CYAN}${SYS_IP}${EMERALD}   ${GRAY}Status:${NC} ${SYS_STATE}${EMERALD}
