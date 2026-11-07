@@ -1,8 +1,8 @@
 version: '3.8'
 services:
-  jtg-main:
+  bowpanel-main:
     build: .
-    container_name: jtg-main
+    container_name: bowpanel-main
     restart: unless-stopped
     ports:
       - "6767:6767"
@@ -12,17 +12,17 @@ services:
       - PORT=6767
       - ENABLE_DOCKER=true
       - DOCKER_SOCKET_PATH=/var/run/docker.sock
-      - JTG_HOST_DATA_PATH=${PWD}/.data
-      - JTG_OWNER_USER=${JTG_OWNER_USER:-}
-      - JTG_OWNER_PASS=${JTG_OWNER_PASS:-}
+      - BowPanel_HOST_DATA_PATH=${PWD}/.data
+      - BowPanel_OWNER_USER=${JTG_OWNER_USER:-}
+      - BowPanel_OWNER_PASS=${JTG_OWNER_PASS:-}
     volumes:
       - ./.data:/app/.data
       - ./backups:/app/backups
       - /var/run/docker.sock:/var/run/docker.sock
 
-  jtg-admin:
+  bowpanel-admin:
     build: .
-    container_name: jtg-admin
+    container_name: bowpanel-admin
     restart: unless-stopped
     command: npm run dev
     ports:
