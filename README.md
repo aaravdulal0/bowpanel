@@ -1,4 +1,4 @@
-# JTG Panel
+# Bow Panel
 
 Made by Jishnu
 
@@ -23,8 +23,8 @@ Menu Options:
 
 1. Clone the repository:
    ```bash
-   git clone https://github.com/JishnuTheGamer/Jtg.git
-   cd Jtg
+   git clone https://github.com/aaravdulal0/bowpanel.git
+   cd bowpanel
    ```
 
 2. Install dependencies:
