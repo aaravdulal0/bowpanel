@@ -1,6 +1,6 @@
 #!/bin/bash
 # =========================================================
-# JTG Panel - Complete & Safe Uninstaller Script
+# Bow Panel - Complete & Safe Uninstaller Script
 # Cleans all servers, containers, PM2 processes, databases,
 # directories, and traces from the VPS.
 # =========================================================
@@ -33,13 +33,13 @@ if [ -f "package.json" ] && grep -q '"name": "react-example"' package.json 2>/de
     PANEL_ROOT="$(pwd)"
 elif [ -f "ecosystem.config.cjs" ] && [ -d "src" ]; then
     PANEL_ROOT="$(pwd)"
-elif [ -d "Jtg" ] && [ -f "Jtg/package.json" ]; then
+elif [ -d "bowpanel" ] && [ -f "bowpanel/package.json" ]; then
     PANEL_ROOT="$(cd Jtg && pwd)"
-elif [ -d "jtg" ] && [ -f "jtg/package.json" ]; then
+elif [ -d "bowpanel" ] && [ -f "bowpanel/package.json" ]; then
     PANEL_ROOT="$(cd jtg && pwd)"
 else
     # Search common parent/sub directories
-    for cand in "$(pwd)" "$HOME/Jtg" "$HOME/jtg" "/root/Jtg" "/root/jtg" "/opt/Jtg" "/opt/jtg" "/var/www/Jtg"; do
+    for cand in "$(pwd)" "$HOME/bowpanel" "$HOME/bowpanel" "/root/bowpanel" "/root/bowpanel" "/opt/bowpanel" "/opt/bowpanel" "/var/www/bowpanel"; do
         if [ -f "$cand/ecosystem.config.cjs" ] || ([ -f "$cand/package.json" ] && [ -f "$cand/server.ts" ]); then
             PANEL_ROOT="$cand"
             break
@@ -54,9 +54,9 @@ print_banner() {
         clear 2>/dev/null || true
     fi
     echo -e "
-  ${RED}${BOLD}╭──────────────────────────────────────────────────────────────╮
-  │  ${WHITE}██╗████████╗ ██████╗${RED}   ${BOLD}${WHITE}JTG PANEL UNINSTALLER${RED}                 │
-  │  ${WHITE}██║╚══██╔══╝██╔════╝${RED}   ${AMBER}Complete System Cleanup & Wipe${RED}         │
+${RED}${BOLD}╭──────────────────────────────────────────────────────────────╮
+  │  ${WHITE}██████╗  ██████╗ ██╗    ██╗${RED}  ${BOLD}${WHITE}BOW PANEL UNINSTALLER${RED}             │
+  │  ${WHITE}██╔══██╗██╔═══██╗██║    ██║${RED}  ${AMBER}Complete System Cleanup & Wipe${RED}         │
   ╰──────────────────────────────────────────────────────────────╯${NC}
 "
 }
