@@ -2,7 +2,7 @@ import os
 
 install_script = '''#!/bin/bash
 # =========================================================
-# JTG Panel - Automated Installation & Management Script
+# Bow Panel - Automated Installation & Management Script
 # =========================================================
 
 # Ensure running in bash
@@ -22,11 +22,11 @@ NC='\\033[0m'
 
 if [ -f "package.json" ]; then
     WORK_DIR="."
-elif [ -d "Jtg" ] && [ -f "Jtg/package.json" ]; then
+elif [ -d "bowpanel" ] && [ -f "bowpanel/package.json" ]; then
     WORK_DIR="Jtg"
 else
-    git clone https://github.com/JishnuTheGamer/Jtg Jtg 2>/dev/null || true
-    WORK_DIR="Jtg"
+    git clone https://github.com/aaravdulal0/bowpanel BowPanel 2>/dev/null || true
+    WORK_DIR="bowpanel"
 fi
 cd "$WORK_DIR" || true
 
@@ -44,17 +44,19 @@ print_banner() {
     if [ -t 1 ]; then
         clear 2>/dev/null || true
     fi
-    echo -e "${CYAN}${BOLD}"
+echo -e "${CYAN}${BOLD}"
     echo "╔══════════════════════════════════════════════╗"
     echo "║                                              ║"
-    echo "║     ██╗████████╗ ██████╗                     ║"
-    echo "║     ██║╚══██╔══╝██╔════╝                     ║"
-    echo "║     ██║   ██║   ██║  ███╗                    ║"
-    echo "║     ██║   ██║   ██║   ██║                    ║"
-    echo "║     ██║   ██║   ╚██████╔╝                    ║"
-    echo "║     ╚═╝   ╚═╝    ╚═════╝                     ║"
+    echo "║     ██████╗  ██████╗ ██╗    ██╗              ║"
+    echo "║     ██╔══██╗██╔═══██╗██║    ██║              ║"
+    echo "║     ██████╔╝██║   ██║██║ █╗ ██║              ║"
+    echo "║     ██╔══██╗██║   ██║██║███╗██║              ║"
+    echo "║     ██████╔╝╚██████╔╝╚███╔███╔╝              ║"
+    echo "║     ╚═════╝  ╚═════╝  ╚══╝╚══╝               ║"
     echo "║                                              ║"
-    echo "║              JTG PANEL INSTALLER             ║"
+    echo "║              BOW PANEL INSTALLER             ║"
+    echo "║                                              ║"
+    echo "║                 By ArrowXD                   ║"
     echo "║                                              ║"
     echo "╚══════════════════════════════════════════════╝"
     echo -e "${NC}"
