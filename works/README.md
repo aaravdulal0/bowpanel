@@ -1,4 +1,4 @@
-# JTG Panel — System Architecture & Works Documentation
+# Bow Panel — System Architecture & Works Documentation
 
 ## 1. Overview & Architecture
 
@@ -83,7 +83,7 @@ npm run createuser
 ```
 Or via non-interactive environment variables:
 ```bash
-JTG_OWNER_USER="admin" JTG_OWNER_PASS="YourSecurePassword123" npm run createuser
+bowpanel_OWNER_USER="admin" bowpanel_OWNER_PASS="YourSecurePassword123" npm run createuser
 ```
 
 ### Dev Server
