@@ -15,7 +15,7 @@ while [[ "$#" -gt 0 ]]; do
 done
 
 echo "======================================"
-echo "    JTG Panel Node Setup Script       "
+echo "    Bow Panel Node Setup Script       "
 echo "======================================"
 
 # Check for root
@@ -50,15 +50,15 @@ if ! command -v pm2 &> /dev/null; then
 fi
 
 # Setup Agent Directory
-mkdir -p /opt/jtg-panel-node
-cd /opt/jtg-panel-node
+mkdir -p /opt/bow-panel-node
+cd /opt/bow-panel-node
 
 # Create package.json
 cat << 'PKGEOF' > package.json
 {
-  "name": "jtg-panel-node",
+  "name": "bow-panel-node",
   "version": "1.0.0",
-  "description": "Node agent for JTG Panel",
+  "description": "Node agent for Bow Panel",
   "main": "agent.js",
   "dependencies": {
     "express": "^4.18.2",
@@ -115,9 +115,9 @@ echo "NODE_KEY=$NODE_KEY" > .env
 echo "PORT=$PORT" >> .env
 
 echo "[+] Starting Node Agent..."
-pm2 stop jtg-node 2>/dev/null || true
-pm2 delete jtg-node 2>/dev/null || true
-pm2 start agent.js --name jtg-node
+pm2 stop bowpanel-node 2>/dev/null || true
+pm2 delete bowpanel-node 2>/dev/null || true
+pm2 start agent.js --name bowpanel-node
 pm2 save
 pm2 startup | tail -n 1 > pm2-startup.sh
 chmod +x pm2-startup.sh
